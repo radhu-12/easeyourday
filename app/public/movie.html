@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ease your day</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+ <link rel="stylesheet" href="movie.css">
+ 
+</head>
+
+<body>
+<div class="card">
+    <div class="view overlay hm-white-slight">
+
+ <div class="card-body">
+<div class="container">
+  <h2>Movie Booking</h2>
+  <!-- Trigger the modal with a button -->
+ <br>
+ <br>
+ <br>
+  <br>
+ <br>
+ <br>
+  
+  <button style="background:linen;  color: black;" id="my-btn" type="button" data-placement="top"  data-trigger="hover"   class="btn btn-success btn-lg" data-html="true"
+ data-content="Rs. 160.00     <br /> Gold               <br />Available  "  data-toggle="popover">10:15 am</button>
+
+
+
+
+<div class="modal fade" id="addChangeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">How many tickets ??</h4>
+      </div>
+      <div class="modal-body">
+     <div class="scrollmenu">
+	 <br>
+	 <center>
+  <a href="#home">1</a>
+  <a href="#news">2</a>
+  <a href="#contact">3</a>
+  <a href="#about">4</a>
+  <a href="#support">5</a>
+  <a href="#blog">6</a>
+  <a href="#tools">7</a>  
+  <a href="#base">8</a>
+  <a href="#custom">9</a>
+  <a href="#more">10</a>
+  </center>
+  <br>
+  <br>
+  <br>
+  <center><img src= "3.jpg" height="150px" width="150px" ></img></center>
+  
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Proceed</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+  
+</div>
+</div>
+</div>
+</div>
+<script>
+
+$('#my-btn').click(function () {
+     $('#addChangeModal').modal('show');
+     $('[data-toggle=popover]').popover('hide');  
+});
+
+$("[data-toggle=popover]").popover();
+</script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+</body>
+</html>

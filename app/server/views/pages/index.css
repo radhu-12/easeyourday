@@ -1,0 +1,181 @@
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+
+.name{
+   color:black;
+    text-shadow: 3px 2px white;
+   font: bold 72px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+ padding: 30px; 
+   position: absolute; 
+  top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.tag{
+   color:white;
+    text-shadow: 3px 2px black;
+   font: bold 50px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+ padding: 30px; 
+   position: absolute; 
+  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+
+.banner img {
+    -webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(40%);
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+	height:600px;
+}
+
+.btn {
+	  border-radius: 25px;
+	  background-color:rgb(102,51,0);
+    border:WHITE;
+	color:white;
+   font: bold 28px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;
+	border-style: solid;
+    border-width: 3px;
+	 padding: 32px 16px; 
+   position: absolute; 
+  top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+	padding: 2px 10px;
+    color: white;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 10px;
+    background-color:	#00008B;
+    color: white;
+	text-align:center;
+	font: bold 38px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;
+}
+
+.modal-body {padding: 2px 16px;}
+
+
+.textbox{
+	position:absolute;
+width:650px;
+padding:2px;
+background:white;
+color:black;
+	font: bold 20px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;   
+}
+
+p {
+	padding:2px;
+	color:black;
+	font: bold 20px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;   
+}

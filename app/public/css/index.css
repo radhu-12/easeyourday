@@ -1,0 +1,138 @@
+.navbar {
+    margin-bottom: 0;
+    background-color: black;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+
+.jumbotron {
+      background-image:url(bg.jpg);
+      color #fff;
+	-webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(40%);
+    background-size: cover;
+    margin: auto;
+	height:500px;
+	background-repeat: no-repeat;
+      padding: 100px 25px;
+  }
+
+h1{
+   color:black;
+    text-shadow: 3px 2px white;
+}
+
+h2{
+   color:white;
+    text-shadow: 3px 2px black;
+}
+
+.btn btn-primary btn-lg{
+	 background-color:rgb(102,51,0);
+}
+
+.jumbotron {
+      background-image:url(bg.jpg);
+      color #fff;
+	-webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(40%);
+    background-size: cover;
+    margin: auto;
+	height:500px;
+	background-repeat: no-repeat;
+      padding: 100px 25px;
+  }
+
+
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  
+  .image {
+  opacity: 1;
+  display: block;
+  width:100%;
+  height:auto;
+ transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.thumbnail:hover .image {
+  opacity: 0.3;
+}
+
+.thumbnail:hover .middle {
+  opacity: 1;
+}
+#thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+
+.text {
+
+  color:#990033;
+  font-size:24px;
+  font-style:bold;
+  padding: 16px 32px;
+}

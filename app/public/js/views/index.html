@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ease Your Day</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!--navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#plans">MyPlans</a></li>
+		 <li><a href="http://localhost:3000/">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--banner -->
+<div class="banner">
+ <img src="bg.jpg" alt="banner">
+  <div class="name">EASE YOUR DAY!</div>
+    <div class="tag">Day Trips Made Easier</div>
+	<button type="button" id="plan_trip" class="btn"> PLAN YOUR TRIP</button>
+</div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Plan Your Trip</h2>
+    </div>
+	<br>
+    <div class="modal-body">
+         <input type="text"  name="currentloc" class="textbox" id="currentloc"  placeholder="Your location"/>
+		 <br><br>
+
+<input type="text" name="destloc" id="destloc"  autofocus="autofocus" class="textbox" placeholder="Enter the destination"/><br><br>
+ 
+<p>Time Span: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="time" class="starttime" /> &nbsp to &nbsp <input type="time" class="endtime" />
+</p>
+<p>Do you want to book cab : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  <input type="radio" name="cabbook" value="yes" checked> Yes &nbsp &nbsp  <input type="radio" name="cabbook" value="no"> No<br>
+</p> 
+
+ <p>First Event : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <select>
+ <option value="" selected disabled hidden style="width: 250px">Select your first event</option><br><br>
+  <option value="movie" style="width: 250px" >Watch a Movie</option>
+  <option value="food" style="width: 250px">Restraunt table booking</option>
+  </select></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("plan_trip");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script  type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script type="text/javascript">
+var source, destination;
+var directionsService = new google.maps.DirectionsService();
+
+document.getElementById("currentloc").addEventListener("change", GetRoute);
+document.getElementById("destloc").addEventListener("change", GetRoute);
+ 
+function GetRoute() {
+source = document.getElementById("currentloc").value;
+    destination = document.getElementById("destloc").value;
+ 
+    var request = {
+        origin: source,
+        destination: destination,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+
+ var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+        origins: [source],
+        destinations: [destination],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.METRIC,
+        avoidHighways: false,
+        avoidTolls: false
+    }, function (response, status) {
+        if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+            var distance = response.rows[0].elements[0].distance.text;
+            var duration = response.rows[0].elements[0].duration.text;
+            
+time.value=duration;
+ 
+        } else {
+            alert("Unable to find the distance via road.");
+        }
+    });
+}
+google.maps.event.addDomListener(window, 'load', function () {
+ if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+		var options = {
+  componentRestrictions: {country: "IN"}
+ };
+            var destplaces = new google.maps.places.Autocomplete(document.getElementById('destloc'),options);
+            google.maps.event.addListener(destplaces, 'place_changed', function () {
+                var place = destplaces.getPlace();
+                var address = place.formatted_address;
+            });
+			 var currplaces = new google.maps.places.Autocomplete(document.getElementById('currentloc'),options);
+            google.maps.event.addListener(currplaces, 'place_changed', function () {
+                var place = currplaces.getPlace();
+                var address = place.formatted_address;
+            });
+			
+        });
+		
+function showPosition(position) {
+var lat=position.coords.latitude;
+var lng= position.coords.longitude;
+var latlng = new google.maps.LatLng(lat, lng);
+            var geocoder = geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+					
+					currentloc.value=results[0].formatted_address;
+                       
+                    }
+                }
+            });
+}
+</script>
+</body>
+</html>

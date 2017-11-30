@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ease your day</title>
+    <% include ../partials/head %>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+
+  <link rel="stylesheet" type="text/css" href="css/movie.css" />
+ 
+</head>
+    <main>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#plans">MyPlans</a></li>
+		 <li><a href="#login">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ <center>
+  <div class="card">
+  <div class="card-block">
+  <h1>&nbsp;&nbsp;&nbsp;Book Your Movie Tickets</h2>
+  </div>
+</div>
+</center>
+</br>
+
+
+  
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+	  <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+	  
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="m5.jpg"  style="width:1500px; height: 400px; ">
+        <div class="carousel-caption">
+          <p style="font-size: 36px; color:#FFFF00 ; font-weight: bold; " data-html="true" align="right">Get 2 free tickets <br />on Ease Your Day App</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="m2.jpg"  style="width: 1500px;  height: 400px;">
+       
+      </div>
+    
+	<div class="item">
+        <img src="m3.png"  style="width:1500px; height: 400px; ">
+      
+      </div>
+	
+      <div class="item">
+        <img src="m4.jpg" style="width:1500px; height: 400px; ">
+        
+      </div>
+  
+	 <div class="item">
+        <img src="m5.jpg"  style="width:1500px; height: 400px; ">
+        
+      </div>
+  
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+
+ <div class="card-body">
+<div class="container">
+
+
+
+  
+  <!-- Trigger the modal with a button -->
+ <br>a
+ <br>
+	
+	<%var h = 0%>
+	<% for(var i=0; i < result.length; i++) { %>
+	
+	</br><p><b><div class="well"><%= result[i].name %></div></b></p> 
+			<div class="card" style="width: 114rem">
+						<div class="card-block">
+		<p><% for(var j=0; j < result[i].shows.length; j++) { %>
+				
+			<p><b>&nbsp;&nbsp;<%= result[i].shows[j].mname%></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<% for(var k=0; k < result[i].shows[j].timings.length; k++) { %> 
+				
+						<button style="background:linen;  color: black;" id="my-btn" type="button" data-placement="top"  data-trigger="hover"   class="btn btn-success btn-lg" data-html="true" data-content="Rs. 160.00     <br /> Gold <br/>Available  "  data-toggle="popover"> <%=result[i].shows[j].timings[k]%> </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+				<% } %>
+	
+			</br><% } %></p>&nbsp;&nbsp;&nbsp;
+	</p>			</div>
+	</div>
+	
+					
+
+	</br><% } %>
+	
+	
+	
+	</div>
+
+
+<div class="modal fade" id="addChangeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">How many tickets ??</h4>
+      </div>
+      <div class="modal-body">
+     <div class="scrollmenu">
+	 <br>
+	 <center>
+  <a href="#1Seats">1</a>
+  <a href="#2Seats">2</a>
+  <a href="#3Seats">3</a>
+  <a href="#4Seats">4</a>
+  <a href="#5Seats">5</a>
+  <a href="#6Seats">6</a>
+  <a href="#7Seats">7</a>  
+  <a href="#8Seats">8</a>
+  <a href="#9Seats">9</a>
+  <a href="#10Seats">10</a>
+  </center>
+  <br>
+  <br>
+  <br>
+  <center>
+  <img src="abc.jpg" height="150px" width="150px">
+
+  
+  </center>
+  
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" id="btn" class="btn btn-primary">Continue</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Confirm your booking!!</h4>
+      </div>
+      <br>
+	  
+      <div class="modal-body">
+        <p>Proceed for booking the tickets..</p>
+      </div>
+	  <br>
+ 
+  <br>
+  <center><img src="abc.jpg" height="150px" width="150px" ></img></center>
+  
+  <br>
+      <div class="modal-footer">
+       
+				
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    <a href="\index.html">      <button type="button" id="btn" class="btn btn-primary">Proceed</button></a>
+      </div>
+        
+    </div>
+  </div>
+</div>  
+</div>
+</div>
+</div>
+</div>
+
+<script>
+
+//set button id on click to hide first modal
+$("#btn").on( "click", function() {
+        $('#addChangeModal').modal('hide');  
+});
+//trigger next modal
+$("#btn").on( "click", function() {
+        $('#myModal2').modal('show');  
+});
+
+</script>
+<script>
+
+$('button').click(function () {
+     $('#addChangeModal').modal('show');
+     $('[data-toggle=popover]').popover('hide');  
+});
+
+$("[data-toggle=popover]").popover();
+</script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script></html>		

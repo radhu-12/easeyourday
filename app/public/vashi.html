@@ -1,0 +1,153 @@
+<html>
+<head>
+<script  type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBHKy21pgWZHnaogfJHWqFsIIXONTDc0Eg&libraries=places"></script>
+<title>Ease Your Day</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!--navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="http://localhost:8081/">Login</a></li>
+        <li><a href="#pricing">My Plans</a></li>
+        <li><a href="userprofile.html">My Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron text-center">
+  <h1>EASE YOUR DAY!</h1> 
+  <h2>Day Trips Made Easier</h2>
+  <br>
+  <br>
+  <br>
+  <form class="form-inline" action="plantrip.htm">
+  <div class="input-group-btn">
+        <button type="submit" class="btn btn-primary btn-lg">PLAN YOUR TRIP</a>
+	  </div>
+</form>
+</div>
+<div class="container-fluid text-center bg-grey">
+  <h3>Trending Hotels</h3><br>
+
+<div  id="hotel"></div> 
+	
+
+</div>
+
+<div class="container-fluid text-center bg-grey">
+  <h3>Trending Theatres</h3><br>
+
+<div  id="theatres"></div> 
+	
+
+</div>
+
+
+<div id="Map"></div>
+
+<script>
+var map1;
+var infowindow;
+var pyrmont = {
+    lat:19.063061,
+  lng: 72.998905
+};
+
+function initMap() {
+
+  map1 = new google.maps.Map(document.getElementById('Map'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+   var service = new google.maps.places.PlacesService(map1);
+  service.nearbySearch({
+    location: pyrmont,
+    radius:1000,
+    type: ['restaurant']
+	
+  }, callback);
+  
+  var service1 = new google.maps.places.PlacesService(map1);
+  service.nearbySearch({
+    location: pyrmont,
+    radius:1000,
+    type: ['movie_theater']
+	
+  }, callback1);
+}
+
+function callback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+    var hotelname = '';
+    for (var i = 0; i < results.length; i++) {
+      // createMarker(results[i]);
+      var name = results[i]['name'];
+	  var rating = results[i]['rating'];
+
+      var photo = null;
+      if (results[i].photos && (results[i].photos.length > 0)) {
+        var photo = results[i]['photos'][0].getUrl({
+          maxWidth: 100
+        });
+      }
+       if (i < 30) {
+        hotelname += '<div class="gallery"><img src="' + photo + '" alt="' + name + '" width="300" height="200"><div class="desc"><b>' + name + '<br>Rating : '+rating+'</b></div></div>';
+      }
+    }
+				
+		$("#hotel").html(hotelname);
+
+  }
+}
+function callback1(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+    var hotelname = '';
+    for (var i = 0; i < results.length; i++) {
+      // createMarker(results[i]);
+      var name = results[i]['name'];
+	  var rating = results[i]['rating'];
+
+      var photo = null;
+      if (results[i].photos && (results[i].photos.length > 0)) {
+        var photo = results[i]['photos'][0].getUrl({
+          maxWidth: 100
+        });
+      }
+      if (i < 30) {
+        hotelname += '<div class="gallery"><img src="' + photo + '" alt="' + name + '" width="300" height="200"><div class="desc"><b>' + name + '<br>Rating : '+rating+'</b></div></div>';
+      }
+    }
+				
+		$("#theatres").html(hotelname);
+
+	 
+  }
+}
+google.maps.event.addDomListener(window, "load", initMap);
+</script>
+
+</body>
+</html>

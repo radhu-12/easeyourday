@@ -1,0 +1,168 @@
+<html>
+<head><title>Ease Your Day</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!--navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="http://localhost:8081/">Login</a></li>
+        <li><a href="#pricing">My Plans</a></li>
+        <li><a href="userprofile.html">My Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--data-->
+<div class="container-fluid">
+  <div class="text-center">
+    <h3>Profile</h3>
+  </div>
+  <div class="row">
+   <div class="col-sm-6 col-sm-offset-3">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+         <h3>Welcome Username</h3>
+        </div>
+		<div class="panel-body">
+			  <form class="form-horizontal" action="/profile">
+			  <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Name:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" name="name" id="usr" placeholder="Name">
+      </div>
+    </div>
+	
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-10">
+         <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+      </div>
+    </div>
+	
+				  <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd" name="mobile">Mobile :</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="usr" placeholder="mobile">
+      </div>
+    </div> 
+	<hr>
+	<div class="form-group">
+      <label class="control-label " for="food">Movie Genres Choices</label>
+      <div class="col-sm-12">
+         <label class="checkbox-inline">
+      <input type="checkbox" name="genre1" value="action">Action
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" name="genre2" value="adventure">Adventure
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="animation">Animation
+    </label>
+	<label class="checkbox-inline">
+      <input type="checkbox" value="biography">Biography
+    </label>
+	<label class="checkbox-inline">
+      <input type="checkbox" value="comedy">Comedy
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="crime">Crime Film
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="drama">Drama
+    </label>
+	<label class="checkbox-inline">
+      <input type="checkbox" value="family">Family
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="adventure">Fantasy
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="history">History
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="horror">Horror
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="mystery">Mystery
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="science">Science Fiction Film
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="romance">Romance
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="thriller">Thriller
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="war">War
+    </label>
+      </div>
+    </div>
+	<hr>
+	<div class="form-group">
+      <label class="control-label " for="food">Food Choices</label>
+      <div class="col-sm-12">
+         <label class="checkbox-inline">
+      <input type="checkbox" value="veg">Vegeterian
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="nonveg">Non-Vegeterian
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="chinese">Chinese
+    </label>
+	<label class="checkbox-inline">
+      <input type="checkbox" value="italian">Italian
+    </label>
+	<label class="checkbox-inline">
+      <input type="checkbox" value="southindian">South Indian
+    </label>
+	<label class="checkbox-inline">
+      <input type="checkbox" value="jain">Jain
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="cafes">Cafes
+    </label>
+	 <label class="checkbox-inline">
+      <input type="checkbox" value="desert">Deserts and bakes
+    </label>
+	
+      </div>
+    </div>
+	<hr>
+    
+  
+    <div class="form-group">        
+     <div class="col-sm-6 col-sm-offset-3">
+	<h4> Click on Save to update your changes</h4>
+        <input type="submit" class="btn btn-default">Submit</input>
+      </div>
+    </div>
+  </form>
+        </div>
+		</div>
+      </div> 
+    </div> 
+</body>
+</html>
